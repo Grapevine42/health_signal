@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, SafeAreaView, StyleSheet, Image, TextInput} from 'react-native';
+import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, TouchableOpacity} from 'react-native';
 import {calHeight, calWidth} from "../config/widthAndHeight";
 
 export default class Login extends Component {
@@ -66,13 +66,16 @@ export default class Login extends Component {
                                }}/>
 
 
-                    <View style={styles.loginBtn}>
-                        <Text style={{
-                            fontWeight: 'bold', color: '#FFFFFF', fontSize: 16,
-                            fontFamily: 'Montserrat'
-                        }}>Login</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Main")}>
 
-                    </View>
+                        <View style={styles.loginBtn}>
+                            <Text style={{
+                                fontWeight: 'bold', color: '#FFFFFF', fontSize: 16,
+                                fontFamily: 'Montserrat'
+                            }}>Login</Text>
+
+                        </View>
+                    </TouchableOpacity>
 
 
                 </View>

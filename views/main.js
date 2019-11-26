@@ -20,54 +20,152 @@ export default class Login extends Component {
     constructor() {
         super();
         this.state = {
-            isPage: 1,
-            mon: new Animated.Value(0),
-            tue: new Animated.Value(0),
-            wed: new Animated.Value(0),
-            thu: new Animated.Value(0),
-            fri: new Animated.Value(0),
-            sat: new Animated.Value(0),
-            sun: new Animated.Value(0)
+            isPage: 0
         };
     }
 
     componentDidMount() {
-        this._fadeIn();
     }
 
 
     _fadeIn() {
-        Animated.timing(
-            this.state.mon, {
-                toValue: 100,
-                duration: 1000,
-                delay: 200,
-            }).start();
+        this.setState({
+            mon1: new Animated.Value(0),
+            mon2: new Animated.Value(0),
+            tue1: new Animated.Value(0),
+            tue2: new Animated.Value(0),
+            wed1: new Animated.Value(0),
+            wed2: new Animated.Value(0),
+            thu1: new Animated.Value(0),
+            thu2: new Animated.Value(0),
+            fri1: new Animated.Value(0),
+            fri2: new Animated.Value(0),
+            sat1: new Animated.Value(0),
+            sat2: new Animated.Value(0),
+            sun1: new Animated.Value(0),
+            sun2: new Animated.Value(0)
+        }, () => {
+            Animated.timing(
+                this.state.mon1, {
+                    toValue: 80,
+                    duration: 1000,
+                }).start();
 
-        Animated.timing(
-            this.state.tue, {
-                toValue: 50,
-                duration: 1000,
-                delay: 200
-            }).start();
+            Animated.timing(
+                this.state.tue1, {
+                    toValue: 50,
+                    duration: 1000,
+                }).start();
 
-        Animated.timing(
-            this.state.wed, {
-                toValue: 130,
-                duration: 1000,
-                delay: 200
-            }).start();
+            Animated.timing(
+                this.state.wed1, {
+                    toValue: 60,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.thu1, {
+                    toValue: 50,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.fri1, {
+                    toValue: 55,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.sat1, {
+                    toValue: 60,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.sun1, {
+                    toValue: 34,
+                    duration: 1000,
+                }).start();
+
+
+            Animated.timing(
+                this.state.mon2, {
+                    toValue: 30,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.tue2, {
+                    toValue: 20,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.wed2, {
+                    toValue: 20,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.thu2, {
+                    toValue: 15,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.fri2, {
+                    toValue: 30,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.sat2, {
+                    toValue: 40,
+                    duration: 1000,
+                }).start();
+
+            Animated.timing(
+                this.state.sun2, {
+                    toValue: 20,
+                    duration: 1000,
+                }).start();
+        });
+
+
     }
 
     _getStyle(data) {
 
         switch (data) {
-            case 'mon':
-                return {height: this.state.mon};
-            case 'tue':
-                return {height: this.state.tue};
-            case 'wed':
-                return {height: this.state.wed};
+            case 'mon1':
+                return {height: this.state.mon1};
+            case 'tue1':
+                return {height: this.state.tue1};
+            case 'wed1':
+                return {height: this.state.wed1};
+            case 'thu1':
+                return {height: this.state.thu1};
+            case 'fri1':
+                return {height: this.state.fri1};
+            case 'sat1':
+                return {height: this.state.sat1};
+            case 'sun1':
+                return {height: this.state.sun1};
+
+            case 'mon2':
+                return {height: this.state.mon2};
+            case 'tue2':
+                return {height: this.state.tue2};
+            case 'wed2':
+                return {height: this.state.wed2};
+            case 'thu2':
+                return {height: this.state.thu2};
+            case 'fri2':
+                return {height: this.state.fri2};
+            case 'sat2':
+                return {height: this.state.sat2};
+            case 'sun2':
+                return {height: this.state.sun2};
         }
 
     }
@@ -96,7 +194,7 @@ export default class Login extends Component {
 
                     <View style={{marginLeft: 55}}>
 
-                        <TouchableOpacity onPress={() => this.setState({isPage: 1})}>
+                        <TouchableOpacity onPress={() => [this.setState({isPage: 1}), this._fadeIn()]}>
 
                             <Text style={styles.menuTxt1}>건강 그래프</Text>
                             <View style={{
@@ -112,7 +210,7 @@ export default class Login extends Component {
             );
             card = (
 
-                <View style={styles.graphView}>
+                <View style={[styles.graphView, {alignItems: 'center'}]}>
                     <Text style={styles.timeStyle}>2019.11.25 ~ 2019.11.30</Text>
                     <View style={styles.barStyle}/>
                     <Text style={styles.infoStyle}>당신이<Text style={{fontWeight: 'bold'}}> 절약한 보험비는?</Text></Text>
@@ -147,6 +245,11 @@ export default class Login extends Component {
                                 i'm OK암보험
                             </Text>
                         </View>
+
+                        <Text style={[styles.percentTxt, {position:'absolute', top: 175, left: -25}]}>0%</Text>
+                        <Text style={[styles.percentTxt, {position:'absolute', top: 175, left: 135}]}>100%</Text>
+
+
                     </View>
                 </View>
             )
@@ -187,23 +290,127 @@ export default class Login extends Component {
             card = (
 
                 <View style={styles.graphView}>
-                    <Text style={styles.timeStyle}>이번주 당신의 건강 패턴</Text>
-                    <View style={styles.barStyle}/>
+                    <View style={{alignItems: 'center'}}>
 
-                    <Text style={styles.healthDay}>건강한 한 주를 보내셨군요 💪</Text>
+                        <Text style={styles.timeStyle}>이번주 당신의 건강 패턴</Text>
+                        <View style={styles.barStyle}/>
 
-                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.healthDay}>건강한 한 주를 보내셨군요 💪</Text>
 
-                        {/*<Animated.View style={[styles.bar, this._getStyle('mon')]}/>*/}
-                        {/*<Animated.View style={[styles.bar, this._getStyle('tue')]}/>*/}
-                        {/*<Animated.View style={[styles.bar, this._getStyle('wed')]}/>*/}
+                        <View style={{flexDirection: 'row', marginTop: 40}}>
+                            <Text style={[styles.graphTxt, {marginLeft: 0}]}>월</Text>
+                            <Text style={styles.graphTxt}>화</Text>
+                            <Text style={styles.graphTxt}>수</Text>
+                            <Text style={styles.graphTxt}>목</Text>
+                            <Text style={styles.graphTxt}>금</Text>
+                            <Text style={styles.graphTxt}>토</Text>
+                            <Text style={styles.graphTxt}>일</Text>
+                        </View>
 
-                        <View style={[styles.bar, {height: 30}]}></View>
-                        <View style={[styles.bar, {height: 130}]}></View>
-                        <View style={[styles.bar, {height: 50}]}></View>
+                        <View style={{flexDirection: 'row'}}>
 
 
+                            <Animated.View style={[styles.animateBar, this._getStyle('mon1'), {
+                                bottom: -110,
+                                left: -138,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('tue1'), {
+                                bottom: -110,
+                                left: -96,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('wed1'), {
+                                bottom: -110,
+                                left: -54,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('thu1'), {
+                                bottom: -110,
+                                left: -12,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('fri1'), {
+                                bottom: -110,
+                                left: 30,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('sat1'), {
+                                bottom: -110,
+                                left: 72,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('sun1'), {
+                                bottom: -110,
+                                left: 114,
+                                backgroundColor: '#00d793'
+                            }]}/>
+
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('mon2'), {
+                                bottom: -110,
+                                left: -123,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('tue2'), {
+                                bottom: -110,
+                                left: -81,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('wed2'), {
+                                bottom: -110,
+                                left: -39,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('thu2'), {
+                                bottom: -110,
+                                left: 3,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('fri2'), {
+                                bottom: -110,
+                                left: 45,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('sat2'), {
+                                bottom: -110,
+                                left: 87,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+                            <Animated.View style={[styles.animateBar, this._getStyle('sun2'), {
+                                bottom: -110,
+                                left: 129,
+                                backgroundColor: '#f24750'
+                            }]}/>
+
+
+
+                        </View>
+
+                        <View style={styles.chartBorder}/>
                     </View>
+
+                    <View style={{flexDirection: 'row', alignItems: 'flex-start', marginTop: 7}}>
+                        <Text style={[styles.graphTxt, {marginLeft: 21, fontSize: 11, marginRight: 38}]}>2019.11.25 ~
+                            2019.11.30</Text>
+                        <View style={styles.positiveCircle}/>
+                        <Text style={[styles.graphTxt, {marginLeft: 5, fontSize: 10}]}>Positive</Text>
+                        <View style={[styles.negativeCircle, {marginLeft: 10}]}/>
+                        <Text style={[styles.graphTxt, {marginLeft: 5, fontSize: 10}]}>Negative</Text>
+                    </View>
+
 
                 </View>
 
@@ -293,7 +500,10 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
 
     menuView: {
-        width: 375, height: 30, marginTop: 20, flexDirection: 'row'
+        width: 375,
+        height: 30,
+        marginTop: 20,
+        flexDirection: 'row'
     },
     menuStyle: {
         width: '50%',
@@ -382,7 +592,6 @@ const styles = StyleSheet.create({
         width: 327,
         height: 325,
         backgroundColor: 'white',
-        alignItems: 'center',
         marginLeft: calWidth(24),
         marginTop: -calHeight(150),
         borderRadius: 10,
@@ -480,10 +689,54 @@ const styles = StyleSheet.create({
         letterSpacing: -0.32,
         color: "#042c5c"
     },
-    bar: {
-        borderRadius: 6.5,
+
+    animateBar: {
+        position: "absolute",
         width: 10,
         marginRight: 5,
-        backgroundColor: '#FCBD24'
+        height: 100,
+        borderRadius: 6.5
     },
+    graphTxt: {
+        fontFamily: "NanumBarunGothic",
+        fontSize: 13,
+        marginLeft: 30,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        letterSpacing: 0.11,
+        color: "#77869e"
+    },
+    chartBorder: {
+        width: 287,
+        height: 2,
+        opacity: 0.39,
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#77869e",
+        marginTop: 115
+    },
+    positiveCircle: {
+        width: 8,
+        height: 8,
+        opacity: 0.7,
+        backgroundColor: "#00d793",
+        borderRadius: 4,
+        marginTop: 1
+    },
+    negativeCircle: {
+        width: 8,
+        height: 8,
+        opacity: 0.7,
+        backgroundColor: "#f24750",
+        borderRadius: 4,
+        marginTop: 1
+    },
+    percentTxt: {
+        fontFamily: "NanumBarunGothic",
+        fontSize: 11,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        letterSpacing: 0.09,
+        color: "#77869e"
+    }
 });
