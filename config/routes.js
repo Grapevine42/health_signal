@@ -13,7 +13,7 @@ import Survey from '../views/survey'
 import tabNav from "./tabNav";
 
 
-import tmp from '../views/survey'
+// import tmp from '../views/myPage'
 
 
 const AppNavigator = createStackNavigator({

@@ -5,6 +5,7 @@ import React from "react";
 import {createAppContainer} from "react-navigation";
 
 import DiscoverTab from './discoverRoutes'
+import MyPageTab from './myPageRoutes'
 
 const TabNavigator = createBottomTabNavigator({
     Home: {
@@ -68,7 +69,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     MyPage: {
-        screen: Main,
+        screen: MyPageTab,
         navigationOptions: {
             tabBarIcon: ({focused}) => (
                 !focused
