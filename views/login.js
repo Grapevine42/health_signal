@@ -1,86 +1,94 @@
 import React, {Component} from 'react';
-import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, TouchableOpacity} from 'react-native';
-import {calHeight, calWidth} from "../config/widthAndHeight";
+import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, TouchableOpacity, StatusBar, KeyboardAvoidingView} from 'react-native';
+import {calHeight, calWidth} from '../config/widthAndHeight';
 
 export default class Login extends Component {
     render() {
         return (
-            <SafeAreaView style={{flex: 1}}>
-                <View style={styles.top}>
 
-                    <Text style={styles.topTxt}>당신의 건강신호에 따라</Text>
-                    <Text style={styles.bottomTxt}>보험을
-                        <Text style={styles.boldTxt}> 추천</Text>해주고, 보험비를
-                        <Text style={styles.boldTxt}> 할인</Text>할인해주는</Text>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'position' : null}
+                style={{flex: 1}}
+            >
+                <SafeAreaView style={{flex: 1}}>
+                    <StatusBar backgroundColor="#fff" barStyle="dark-content"/>
 
+                    <View style={styles.top}>
 
-                    <Image
-                        style={{width: calWidth(159), height: calHeight(70), marginTop: calHeight(34)}}
-                        source={require('../assets/images/logo.png')}
-                    />
-
-                </View>
-
-
-                <View style={styles.bottom}>
+                        <Text style={styles.topTxt}>당신의 건강신호에 따라</Text>
+                        <Text style={styles.bottomTxt}>보험을
+                            <Text style={styles.boldTxt}> 추천</Text>해주고, 보험비를
+                            <Text style={styles.boldTxt}> 할인</Text>할인해주는</Text>
 
 
-                    <Text style={styles.inputLabel}>ID</Text>
+                        <Image
+                            style={{width: calWidth(159), height: calHeight(70), marginTop: calHeight(34)}}
+                            source={require('../assets/images/logo.png')}
+                        />
 
-                    <TextInput onChangeText={(pwdEmail) => this.setState({pwdEmail})}
-                               autoCapitalize='none'
-                               keyboardType={'email-address'}
-                               style={{
-                                   alignItems: 'center',
-                                   width: calWidth(295),
-                                   marginTop: -calHeight(20),
-                                   borderBottomColor: 'rgba(255, 255, 255, .42)',
-                                   fontSize: 16,
-                                   marginLeft: calWidth(40),
-                                   borderBottomWidth: 1,
-                                   paddingBottom: calHeight(15),
-                                   paddingLeft: calWidth(40),
-                                   fontFamily: 'NanumBarunGothicLight',
-                                   color: 'white',
-                               }}></TextInput>
-
-                    <Text style={styles.inputLabel2}>PW</Text>
-
-                    <TextInput onChangeText={(pwdEmail) => this.setState({pwdEmail})}
-                               autoCapitalize='none'
-                               autoCompleteType={'password'}
-                               secureTextEntry={true}
-                               style={{
-                                   alignItems: 'center',
-                                   marginLeft: calWidth(40),
-                                   width: calWidth(295),
-                                   marginTop: -calHeight(20),
-                                   paddingLeft: calWidth(40),
-                                   borderBottomColor: 'rgba(255, 255, 255, .42)',
-                                   fontFamily: 'NanumBarunGothicLight',
-                                   fontSize: 16,
-                                   paddingBottom: calHeight(15),
-                                   borderBottomWidth: 1,
-                                   color: 'white',
-
-                               }}/>
+                    </View>
 
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Main")}>
-
-                        <View style={styles.loginBtn}>
-                            <Text style={{
-                                fontWeight: 'bold', color: '#FFFFFF', fontSize: 16,
-                                fontFamily: 'Montserrat'
-                            }}>Login</Text>
-
-                        </View>
-                    </TouchableOpacity>
+                    <View style={styles.bottom}>
 
 
-                </View>
+                        <Text style={styles.inputLabel}>ID</Text>
 
-            </SafeAreaView>
+                        <TextInput onChangeText={(pwdEmail) => this.setState({pwdEmail})}
+                                   autoCapitalize='none'
+                                   keyboardType={'email-address'}
+                                   style={{
+                                       alignItems: 'center',
+                                       width: calWidth(295),
+                                       marginTop: -calHeight(20),
+                                       borderBottomColor: 'rgba(255, 255, 255, .42)',
+                                       fontSize: 16,
+                                       marginLeft: calWidth(40),
+                                       borderBottomWidth: 1,
+                                       paddingBottom: calHeight(15),
+                                       paddingLeft: calWidth(40),
+                                       fontFamily: 'NanumBarunGothicLight',
+                                       color: 'white',
+                                   }}></TextInput>
+
+                        <Text style={styles.inputLabel2}>PW</Text>
+
+                        <TextInput onChangeText={(pwdEmail) => this.setState({pwdEmail})}
+                                   autoCapitalize='none'
+                                   autoCompleteType={'password'}
+                                   secureTextEntry={true}
+                                   style={{
+                                       alignItems: 'center',
+                                       marginLeft: calWidth(40),
+                                       width: calWidth(295),
+                                       marginTop: -calHeight(20),
+                                       paddingLeft: calWidth(40),
+                                       borderBottomColor: 'rgba(255, 255, 255, .42)',
+                                       fontFamily: 'NanumBarunGothicLight',
+                                       fontSize: 16,
+                                       paddingBottom: calHeight(15),
+                                       borderBottomWidth: 1,
+                                       color: 'white',
+
+                                   }}/>
+
+
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Survey')}>
+
+                            <View style={styles.loginBtn}>
+                                <Text style={{
+                                    fontWeight: 'bold', color: '#FFFFFF', fontSize: 16,
+                                    fontFamily: 'Montserrat',
+                                }}>Login</Text>
+
+                            </View>
+                        </TouchableOpacity>
+
+
+                    </View>
+
+                </SafeAreaView>
+            </KeyboardAvoidingView>
         );
     }
 }
@@ -103,14 +111,14 @@ const styles = StyleSheet.create({
         marginLeft: calWidth(45),
         fontWeight: 'bold',
         fontFamily: 'NanumBarunGothic',
-        marginTop: calHeight(50)
+        marginTop: calHeight(50),
     },
 
     top: {
         width: calWidth(375),
         height: calHeight(320),
         paddingTop: calHeight(85),
-        alignItems: 'center'
+        alignItems: 'center',
     },
     bottom: {
         width: calWidth(375),
@@ -125,7 +133,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: '#77869E',
         fontWeight: 'bold',
-        fontFamily: 'NanumBarunGothic'
+        fontFamily: 'NanumBarunGothic',
     },
     bottomTxt: {
         fontSize: 16,
@@ -138,7 +146,7 @@ const styles = StyleSheet.create({
         color: '#042C5C',
         textAlign: 'center',
         lineHeight: 30,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     loginBtn: {
         width: calWidth(297),
@@ -150,5 +158,5 @@ const styles = StyleSheet.create({
 
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    },
 });

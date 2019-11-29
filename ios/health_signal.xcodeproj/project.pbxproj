@@ -5,9 +5,11 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* health_signalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* health_signalTests.m */; };
 		0B1DEFAFC747A6B8AD47881A /* libPods-health_signal-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E53BDC7190A805C8F66F521 /* libPods-health_signal-tvOS.a */; };
+		0F5FB5A94374490EAFD3481C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -16,14 +18,13 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* health_signalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* health_signalTests.m */; };
+		74DD94C5F7FA4A30A877208B /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */; };
 		79DEE107C5B54B7B3B0B33E6 /* libPods-health_signal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 982F05CF7034D8215D9964DB /* libPods-health_signal.a */; };
+		ADBD69B295B84F9B9BF0B2A3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */; };
+		D95DD613A4CD404C93C7900C /* NanumBarunGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */; };
 		E3634468C4F5788E557F6961 /* libPods-health_signal-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64137C4E2A309DD5CFEC26E0 /* libPods-health_signal-tvOSTests.a */; };
 		F6CCFFD1A96AEE3219682EF1 /* libPods-health_signalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEFB19AA9D6D24E04A04FEB /* libPods-health_signalTests.a */; };
-		ADBD69B295B84F9B9BF0B2A3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */; };
-		74DD94C5F7FA4A30A877208B /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */; };
 		F8322A2979CE426396A32670 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9276D06049E4CA889AF53ED /* NanumBarunGothicBold.ttf */; };
-		D95DD613A4CD404C93C7900C /* NanumBarunGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */; };
-		0F5FB5A94374490EAFD3481C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		00E356EE1AD99517003FC87E /* health_signalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = health_signalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* health_signalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = health_signalTests.m; sourceTree = "<group>"; };
+		00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		028EDA6532A07EA3E7C26A90 /* Pods-health_signalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signalTests.debug.xcconfig"; path = "Target Support Files/Pods-health_signalTests/Pods-health_signalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0CEFB19AA9D6D24E04A04FEB /* libPods-health_signalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-health_signalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* health_signal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = health_signal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,17 +67,16 @@
 		64137C4E2A309DD5CFEC26E0 /* libPods-health_signal-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-health_signal-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7609D8B8992CDB75103436DE /* Pods-health_signal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signal.release.xcconfig"; path = "Target Support Files/Pods-health_signal/Pods-health_signal.release.xcconfig"; sourceTree = "<group>"; };
 		7F22B9BA47B780BB9662A884 /* Pods-health_signal-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signal-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-health_signal-tvOSTests/Pods-health_signal-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumBarunGothicLight.ttf; path = ../assets/fonts/NanumBarunGothicLight.ttf; sourceTree = "<group>"; };
 		982F05CF7034D8215D9964DB /* libPods-health_signal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-health_signal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99559B82583FE3A220D0CBAC /* Pods-health_signal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signal.debug.xcconfig"; path = "Target Support Files/Pods-health_signal/Pods-health_signal.debug.xcconfig"; sourceTree = "<group>"; };
 		C00A7DE779C109AA1FC0F754 /* Pods-health_signal-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signal-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-health_signal-tvOS/Pods-health_signal-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumBarunGothic.ttf; path = ../assets/fonts/NanumBarunGothic.ttf; sourceTree = "<group>"; };
+		E9276D06049E4CA889AF53ED /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumBarunGothicBold.ttf; path = ../assets/fonts/NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EE3FA585A1C9AB7FC56436B0 /* Pods-health_signal-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health_signal-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-health_signal-tvOSTests/Pods-health_signal-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; name = "NanumBarunGothic.ttf"; path = "../assets/fonts/NanumBarunGothic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E9276D06049E4CA889AF53ED /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; name = "NanumBarunGothicBold.ttf"; path = "../assets/fonts/NanumBarunGothicBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */ = {isa = PBXFileReference; name = "NanumBarunGothicLight.ttf"; path = "../assets/fonts/NanumBarunGothicLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; name = "Montserrat-Bold.ttf"; path = "../assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +171,19 @@
 				028EDA6532A07EA3E7C26A90 /* Pods-health_signalTests.debug.xcconfig */,
 				4B1A336E1CE928B3DA5291DB /* Pods-health_signalTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		81B9143D66F14747B9DDFF40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */,
+				E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */,
+				E9276D06049E4CA889AF53ED /* NanumBarunGothicBold.ttf */,
+				86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */,
+				DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -208,19 +220,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81B9143D66F14747B9DDFF40 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				00F7B0A80788487CBCE1C2FF /* Montserrat-Regular.ttf */,
-				E00B0834D5164CABB31C0D5F /* NanumBarunGothic.ttf */,
-				E9276D06049E4CA889AF53ED /* NanumBarunGothicBold.ttf */,
-				86C6A9C4101F4A82AB846EAE /* NanumBarunGothicLight.ttf */,
-				DEC7862631C746FF9087B07F /* Montserrat-Bold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +252,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				5FDE64CC5F8942DC486C773C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,7 +313,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = KM4WFQ23RY;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = KM4WFQ23RY;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -331,6 +335,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -435,6 +440,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FDE64CC5F8942DC486C773C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-health_signal/Pods-health_signal-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/QBImagePickerController/QBImagePicker.bundle",
+				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QBImagePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RSKImageCropperStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-health_signal/Pods-health_signal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8683648E7C47AE43EC4C5E58 /* [CP] Check Pods Manifest.lock */ = {
@@ -611,6 +636,7 @@
 			baseConfigurationReference = 028EDA6532A07EA3E7C26A90 /* Pods-health_signalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KM4WFQ23RY;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -635,6 +661,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = KM4WFQ23RY;
 				INFOPLIST_FILE = health_signalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -656,6 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = KM4WFQ23RY;
 				INFOPLIST_FILE = health_signal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -675,6 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KM4WFQ23RY;
 				INFOPLIST_FILE = health_signal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

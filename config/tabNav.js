@@ -1,9 +1,10 @@
 import {createBottomTabNavigator} from "react-navigation-tabs";
 import Main from "../views/main";
 import {Image} from "react-native";
-import Discover from "../views/discover";
 import React from "react";
 import {createAppContainer} from "react-navigation";
+
+import DiscoverTab from './discoverRoutes'
 
 const TabNavigator = createBottomTabNavigator({
     Home: {
@@ -37,7 +38,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Discover:{
-        screen: Discover,
+        screen: DiscoverTab,
         navigationOptions: {
             tabBarIcon: ({focused}) => (
                 !focused

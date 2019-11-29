@@ -1,12 +1,98 @@
 import React, {Component} from 'react';
-import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, StatusBar} from 'react-native';
-import {calHeight, calWidth} from "../config/widthAndHeight";
+import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, StatusBar, TouchableOpacity} from 'react-native';
+import {calHeight, calWidth} from '../config/widthAndHeight';
+import ImagePicker from 'react-native-image-crop-picker';
+import ImageResizer from 'react-native-image-resizer';
+import axios from 'axios';
+
+
+const options = {
+    storageOptions: {
+        skipBackup: true,
+        path: 'images',
+        cameraRoll: true,
+        waitUntilSaved: true,
+    },
+};
+
+let outer;
+
 
 export default class Login extends Component {
+
+
+    componentDidMount() {
+        outer = this;
+    }
+
+    getImage = () => {
+
+
+        ImagePicker.openPicker({
+            multiple: true,
+        }).then(images => {
+            console.log('?', images);
+
+
+            axios.post('http://192.168.43.224:3434/rekognition/listload', {num: images.length})
+                .then(function (response) {
+                    let data = response.data;
+
+
+                    console.log(data);
+
+                });
+
+
+            this.props.navigation.navigate('Discovering');
+
+        });
+    };
+
+    getImageReal = () => {
+
+
+        ImagePicker.openPicker({
+            multiple: false,
+        }).then(images => {
+            console.log('?', images);
+
+            ImageResizer.createResizedImage(images.path, 400, 400, 'PNG', 80).then((response) => {
+
+                console.log(response);
+
+
+                const formData = new FormData();
+                formData.append('photos', {
+                    uri: response.uri,
+                    type: 'image/png',
+                    name: response.name,
+                });
+
+                console.log(formData);
+
+                axios.post('http://192.168.43.224:3434/rekognition/upload', formData, {
+                        headers: {
+                            'content-type': 'multipart/form-data',
+                        },
+                    },
+                ).then(function (response) {
+                    let data = response.data;
+
+
+                    console.log(data);
+
+                });
+            });
+
+        });
+    };
+
+
     render() {
         return (
             <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
-                <StatusBar backgroundColor="blue" barStyle="default"/>
+                <StatusBar backgroundColor="#fff" barStyle="dark-content"/>
 
 
                 <Text style={styles.logoTxt}>
@@ -24,11 +110,17 @@ export default class Login extends Component {
                     source={require('../assets/images/discover/discover_logo.png')}
                 />
 
+                <TouchableOpacity onPress={() => this.getImage()}>
+                    <View style={styles.btnStyle}>
+                        <Text style={styles.btnTxt}>실제 분석하기</Text>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.btnStyle}>
-                    <Text style={styles.btnTxt}>분석하기</Text>
-
-                </View>
+                <TouchableOpacity onPress={() => this.getImageReal()}>
+                    <View style={styles.btnStyle2}>
+                        <Text style={styles.btnTxt2}>딥러닝 분석 체험하기</Text>
+                    </View>
+                </TouchableOpacity>
 
 
             </SafeAreaView>
@@ -41,61 +133,80 @@ const styles = StyleSheet.create({
 
 
     logoTxt: {
-        fontFamily: "Montserrat",
+        fontFamily: 'Montserrat',
         fontSize: 17.5,
         marginTop: 10,
-        fontWeight: "bold",
-        fontStyle: "normal",
+        fontWeight: 'bold',
+        fontStyle: 'normal',
         lineHeight: 36,
         letterSpacing: -0.35,
-        color: "#323643"
+        color: '#323643',
     },
 
     middleTxt: {
         width: 260,
         height: 72,
-        fontFamily: "NanumBarunGothic",
+        fontFamily: 'NanumBarunGothic',
         fontSize: 15,
-        fontWeight: "normal",
-        fontStyle: "normal",
+        fontWeight: 'normal',
+        fontStyle: 'normal',
         lineHeight: 24,
         letterSpacing: 0.12,
-        textAlign: "center",
-        color: "#77869e",
-        marginTop: 50
+        textAlign: 'center',
+        color: '#77869e',
+        marginTop: 50,
     },
     middleTxt1: {
         width: 260,
         height: 72,
-        fontFamily: "NanumBarunGothic",
+        fontFamily: 'NanumBarunGothic',
         fontSize: 15,
-        fontWeight: "bold",
-        fontStyle: "normal",
+        fontWeight: 'bold',
+        fontStyle: 'normal',
         lineHeight: 24,
         letterSpacing: 0.12,
-        textAlign: "center",
-        color: 'rgb(4,44,92)'
+        textAlign: 'center',
+        color: 'rgb(4,44,92)',
     },
 
     btnStyle: {
         width: 297,
         height: 48,
         borderRadius: 6,
-        marginTop: 55,
-        backgroundColor: "#00d793",
-        alignItems:'center',
-        justifyContent:'center'
+        marginTop: 20,
+        backgroundColor: '#00d793',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    btnStyle2: {
+        width: 297,
+        height: 48,
+        borderRadius: 6,
+        backgroundColor: '#77869e',
+        marginTop: 21,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     btnTxt: {
-        width: 59,
         height: 19,
-        fontFamily: "NanumBarunGothic",
+        fontFamily: 'NanumBarunGothic',
         fontSize: 16,
-        fontWeight: "bold",
-        fontStyle: "normal",
+        fontWeight: 'bold',
+        fontStyle: 'normal',
         letterSpacing: 0.4,
-        color: "#ffffff"
-    }
+        color: '#ffffff',
+    },
+
+    btnTxt2: {
+        width: 138,
+        height: 19,
+        fontFamily: 'NanumBarunGothic',
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontStyle: 'normal',
+        letterSpacing: 0.4,
+        color: '#ffffff',
+    },
 
 
 });
