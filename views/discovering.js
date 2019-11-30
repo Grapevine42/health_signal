@@ -24,13 +24,13 @@ export default class Login extends Component {
                     Animated.timing(this.state.value3, {
                         toValue: 1,
                         delay: 200,
-                        duration: 1000,
+                        duration: 500,
                     }).start();
 
 
                     setTimeout(()=>{
                         this.props.navigation.navigate('Result');
-                    }, 300)
+                    }, 1500)
 
 
                 }, 2300);
@@ -39,20 +39,20 @@ export default class Login extends Component {
                 Animated.timing(this.state.value2, {
                     toValue: 1,
                     delay: 200,
-                    duration: 1000,
+                    duration: 500,
                 }).start();
 
 
-            }, 3200);
+            }, 1600);
             this.progressIng(0, 228 / 3);
 
             Animated.timing(this.state.value1, {
                 toValue: 1,
                 delay: 200,
-                duration: 1000,
+                duration: 500,
             }).start();
 
-        }, 1600);
+        }, 800);
 
     }
 

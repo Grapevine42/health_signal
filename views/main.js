@@ -25,7 +25,6 @@ export default class Login extends Component {
             positive: 0,
             negative: 0,
             sum: 0,
-
         };
     }
 
@@ -69,42 +68,44 @@ export default class Login extends Component {
             },
             () => {
                 Animated.timing(this.state.mon1, {
-                    toValue: 80,
+                    toValue: 90,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.tue1, {
-                    toValue: 50,
+                    toValue: 60,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.wed1, {
-                    toValue: 60,
+                    toValue: 40,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.thu1, {
-                    toValue: 50,
+                    toValue: 30,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.fri1, {
-                    toValue: 55,
+                    toValue: 80,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.sat1, {
-                    toValue: 60,
+                    toValue: 10,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.sun1, {
-                    toValue: 34,
+                    toValue: 70,
                     duration: 1000,
                 }).start();
 
+
+
                 Animated.timing(this.state.mon2, {
-                    toValue: 30,
+                    toValue: 10,
                     duration: 1000,
                 }).start();
 
@@ -119,22 +120,22 @@ export default class Login extends Component {
                 }).start();
 
                 Animated.timing(this.state.thu2, {
-                    toValue: 15,
+                    toValue: 20,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.fri2, {
-                    toValue: 30,
+                    toValue: 10,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.sat2, {
-                    toValue: 40,
+                    toValue: 0,
                     duration: 1000,
                 }).start();
 
                 Animated.timing(this.state.sun2, {
-                    toValue: 20,
+                    toValue: 30,
                     duration: 1000,
                 }).start();
             },
@@ -211,7 +212,7 @@ export default class Login extends Component {
             );
             card = (
                 <View style={[styles.graphView, {alignItems: 'center'}]}>
-                    <Text style={styles.timeStyle}>2019.11.25 ~ 2019.11.30</Text>
+                    <Text style={styles.timeStyle}>2019.11.24 ~ 2019.11.30</Text>
                     <View style={styles.barStyle}/>
                     <Text style={styles.infoStyle}>
                         당신이<Text style={{fontWeight: 'bold'}}> 절약한 보험비는?</Text>
@@ -220,7 +221,7 @@ export default class Login extends Component {
                     <AnimatedGaugeProgress
                         size={230}
                         width={14}
-                        fill={50}
+                        fill={33.4}
                         rotation={90}
                         cropDegree={105}
                         tintColor="#0047CC"
@@ -239,10 +240,10 @@ export default class Login extends Component {
                         />
 
                         <Text style={styles.circleTxt}>할인받은 총 보험비</Text>
-                        <Text style={styles.circleTxt2}>+{this.state.sum}원</Text>
+                        <Text style={styles.circleTxt2}>+1,800원</Text>
 
                         <View style={styles.middleArea}>
-                            <Text style={styles.insureName}>{this.state.insure}</Text>
+                            <Text style={styles.insureName}>i'mOK암보험</Text>
                         </View>
 
                         <Text
@@ -300,13 +301,13 @@ export default class Login extends Component {
                         <Text style={styles.healthDay}>건강한 한 주를 보내셨군요 💪</Text>
 
                         <View style={{flexDirection: 'row', marginTop: 40}}>
-                            <Text style={[styles.graphTxt, {marginLeft: 0}]}>월</Text>
+                            <Text style={[styles.graphTxt, {marginLeft: 0}]}>일</Text>
+                            <Text style={styles.graphTxt}>월</Text>
                             <Text style={styles.graphTxt}>화</Text>
                             <Text style={styles.graphTxt}>수</Text>
                             <Text style={styles.graphTxt}>목</Text>
                             <Text style={styles.graphTxt}>금</Text>
                             <Text style={styles.graphTxt}>토</Text>
-                            <Text style={styles.graphTxt}>일</Text>
                         </View>
 
                         <View style={{flexDirection: 'row'}}>
@@ -493,7 +494,7 @@ export default class Login extends Component {
                                 styles.graphTxt,
                                 {marginLeft: 21, fontSize: 11, marginRight: 38},
                             ]}>
-                            2019.11.25 ~ 2019.11.30
+                            2019.11.24 ~ 2019.11.30
                         </Text>
                         <View style={styles.positiveCircle}/>
                         <Text style={[styles.graphTxt, {marginLeft: 5, fontSize: 10}]}>
@@ -552,7 +553,7 @@ export default class Login extends Component {
 
                         <View style={{marginLeft: 16}}>
                             <Text style={styles.pnTxt}>Positive</Text>
-                            <Text style={styles.priceTxt}>+{this.state.positive}</Text>
+                            <Text style={styles.priceTxt}>+2,533</Text>
                         </View>
                     </View>
 
@@ -564,7 +565,7 @@ export default class Login extends Component {
 
                         <View style={{marginLeft: 16}}>
                             <Text style={styles.pnTxt}>Negative</Text>
-                            <Text style={styles.priceTxt}>-{this.state.negative}</Text>
+                            <Text style={styles.priceTxt}>-733</Text>
                         </View>
                     </View>
                 </View>

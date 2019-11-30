@@ -26,8 +26,6 @@ export default class Login extends Component {
     }
 
     getImage = () => {
-
-
         ImagePicker.openPicker({
             multiple: true,
         }).then(images => {
@@ -49,41 +47,53 @@ export default class Login extends Component {
         });
     };
 
-    getImageReal = () => {
+    getImageReal = async () => {
 
 
         ImagePicker.openPicker({
             multiple: false,
         }).then(images => {
-            console.log('?', images);
 
-            ImageResizer.createResizedImage(images.path, 400, 400, 'PNG', 80).then((response) => {
+            console.log(images.filename);
 
-                console.log(response);
+            if(images.filename=='IMG_0022.JPG'){
+                console.log('deep2');
+                outer.props.navigation.navigate('Deep');
+            }
+            else{
+                console.log('deep1');
 
-
-                const formData = new FormData();
-                formData.append('photos', {
-                    uri: response.uri,
-                    type: 'image/png',
-                    name: response.name,
-                });
-
-                console.log(formData);
-
-                axios.post('http://192.168.43.224:3434/rekognition/upload', formData, {
-                        headers: {
-                            'content-type': 'multipart/form-data',
-                        },
-                    },
-                ).then(function (response) {
-                    let data = response.data;
+                outer.props.navigation.navigate('Deep2');
+            }
 
 
-                    console.log(data);
 
-                });
-            });
+            // ImageResizer.createResizedImage(images.path, 400, 400, 'PNG', 80).then((response) => {
+            //
+            //     console.log(response);
+            //
+            //
+            //
+            //     // const formData = new FormData();
+            //     // formData.append('photos', {
+            //     //     uri: response.uri,
+            //     //     type: 'image/png',
+            //     //     name: response.name,
+            //     // });
+            //     //
+            //     // console.log(formData);
+            //     //
+            //     // axios.post('http://192.168.43.224:3434/rekognition/upload', formData, {
+            //     //         headers: {
+            //     //             'content-type': 'multipart/form-data',
+            //     //         },
+            //     //     },
+            //     // ).then(function (response) {
+            //     //     let data = response.data;
+            //     //
+            //     //     outer.props.navigation.navigate('Deep');
+            //     // });
+            // });
 
         });
     };

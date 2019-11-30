@@ -27,9 +27,9 @@ export default class Login extends Component {
 
                         <View style={{alignItems: 'center'}}>
 
-                            <Image source={require('../assets/images/myPage/profile.jpg')} style={{
-                                width: 83, marginTop: 35,
-                                height: 85,
+                            <Image source={require('../assets/images/myPage/profile.png')} style={{
+                                width: 83, marginTop: 15,
+                                resizeMode: 'contain'
                             }}/>
 
 
@@ -93,7 +93,7 @@ export default class Login extends Component {
                         <Image source={require('../assets/images/myPage/calendar.png')}
                                style={{width: 36 / 3, height: 39 / 3, marginTop: 42, marginLeft: 32}}/>
 
-                        <Text style={styles.calTxt}>2019.11.25 ~ 2019.11.30 </Text>
+                        <Text style={styles.calTxt}>2019.11.24 ~ 2019.11.30 </Text>
                     </View>
 
 
@@ -313,13 +313,16 @@ const styles = StyleSheet.create({
         marginLeft: 8,
     },
     titleTxt: {
-        width: 171,
+        width: 172,
         height: 39,
-        fontFamily: 'NanumBarunGothic',
+        fontFamily: "NanumBarunGothic",
         fontSize: 30,
-        fontWeight: '500',
+        fontWeight: "normal",
+        fontStyle: "normal",
         letterSpacing: -0.67,
-        color: '#00c385', marginLeft: 7,
+        color: "#20e0a5",
+        marginLeft: 8
+
     },
 
 });

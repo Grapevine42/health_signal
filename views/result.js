@@ -3,9 +3,54 @@ import {Text, View, SafeAreaView, StyleSheet, Image, TextInput, Animated} from '
 import {calHeight, calWidth} from '../config/widthAndHeight';
 import {ScrollView} from 'react-navigation';
 import Swiper from 'react-native-swiper';
+import axios from 'axios';
 
+
+
+let outer;
 
 export default class Result extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            pImage: 0,
+            nImage: 0,
+            pInsta: 0,
+            nInsta: 0,
+            pKT: 0,
+            nKT: 0,
+            hash: 0,
+            pTotal: 0,
+            nTotal: 0,
+            total: 0
+        };
+    }
+
+
+    componentDidMount() {
+        outer = this;
+
+        axios.post('http://192.168.43.224:3434/rekognition/alllist')
+            .then(function (response) {
+                let data = response.data;
+
+
+                outer.setState({
+                    pImage: data[0].pimage,
+                    nImage: data[0].nimage,
+                    pInstar: data[0].pinstar,
+                    nInstar: data[0].ninstar,
+                    pKT: data[0].pkftc,
+                    nKT: data[0].nkftc,
+                    pTotal : data[0].positive,
+                    nTotal : data[0].negative,
+                    total : data[0].total
+                });
+
+            });
+    }
+
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -14,10 +59,17 @@ export default class Result extends Component {
 
                     <View style={styles.blueArea}>
 
+                        <Image
+                            style={{width: 45, height: 47, position:'absolute', marginTop: 23, marginLeft: 256}}
+                            source={require('../assets/images/discover/imgPlus.png')}
+                        />
+
                         <View style={{marginLeft: 23, marginTop: 23}}>
                             <Text style={styles.blueTxt1}>임현우님의</Text>
-                            <Text style={styles.blueTxt2}>총 <Text style={{fontWeight: 'bold'}}>36</Text>건의 분석 결과</Text>
+                            <Text style={styles.blueTxt2}>총 <Text style={{fontWeight: 'bold'}}>49</Text>건의 분석 결과</Text>
                         </View>
+
+
 
                         <View style={styles.border}/>
 
@@ -27,7 +79,7 @@ export default class Result extends Component {
                                 source={require('../assets/images/discover/calendar.png')}
                             />
 
-                            <Text style={styles.calTxt}>2019.11.25 ~ 2019.11.30 </Text>
+                            <Text style={styles.calTxt}>2019.11.24 ~ 2019.11.30 </Text>
                         </View>
 
                         <View style={{marginTop: 16, marginLeft: 22, flexDirection: 'row', alignItems: 'center'}}>
@@ -61,7 +113,7 @@ export default class Result extends Component {
                                 <Text style={styles.circleTitle}>데이터 총 건수</Text>
                             </View>
 
-                            <Text style={styles.circleNum}>36</Text>
+                            <Text style={styles.circleNum}>49</Text>
                         </View>
 
                         <View style={styles.line}/>
@@ -71,7 +123,7 @@ export default class Result extends Component {
                                 <Text style={styles.circleTitle}>Positive</Text>
                             </View>
 
-                            <Text style={styles.circleNum}>4.6</Text>
+                            <Text style={styles.circleNum}>13</Text>
                         </View>
 
                         <View style={styles.line}/>
@@ -82,14 +134,14 @@ export default class Result extends Component {
                                 <Text style={styles.circleTitle}>Negative</Text>
                             </View>
 
-                            <Text style={styles.circleNum}>1.6</Text>
+                            <Text style={styles.circleNum}>4</Text>
                         </View>
                     </View>
 
                     <View style={{marginTop: 11}}>
                         <View style={styles.whiteBox}>
 
-                            <View style={{width: 214, flexDirection:'row', alignItems:'center'}}>
+                            <View style={{width: 205, flexDirection:'row', alignItems:'center'}}>
 
                                 <Image
                                     style={styles.iconStyle}
@@ -102,7 +154,7 @@ export default class Result extends Component {
                                     style={{width:22, height: 22}}
                                     source={require('../assets/images/discover/pIcon.png')}
                                 />
-                                <Text style={styles.pTxt}>9</Text>
+                                <Text style={styles.pTxt}>6</Text>
                                 <Image
                                     style={{width:22, height: 22, marginLeft:18}}
                                     source={require('../assets/images/discover/nIcon.png')}
@@ -115,7 +167,7 @@ export default class Result extends Component {
 
                         <View style={styles.whiteBox}>
 
-                            <View style={{width: 214, flexDirection:'row', alignItems:'center'}}>
+                            <View style={{width: 205, flexDirection:'row', alignItems:'center'}}>
 
                                 <Image
                                     style={styles.iconStyle}
@@ -128,19 +180,19 @@ export default class Result extends Component {
                                     style={{width:22, height: 22}}
                                     source={require('../assets/images/discover/pIcon.png')}
                                 />
-                                <Text style={styles.pTxt}>9</Text>
+                                <Text style={styles.pTxt}>10</Text>
                                 <Image
                                     style={{width:22, height: 22, marginLeft:18}}
                                     source={require('../assets/images/discover/nIcon.png')}
                                 />
-                                <Text style={[styles.pTxt, {color: '#f24750'}]}>2</Text>
+                                <Text style={[styles.pTxt, {color: '#f24750'}]}>3</Text>
 
                             </View>
 
                         </View>
 
                         <View style={styles.whiteBox}>
-                            <View style={{width: 214, flexDirection:'row', alignItems:'center'}}>
+                            <View style={{width: 205, flexDirection:'row', alignItems:'center'}}>
                                 <Image
                                     style={styles.iconStyle}
                                     source={require('../assets/images/discover/credit.png')}
@@ -152,12 +204,12 @@ export default class Result extends Component {
                                     style={{width:22, height: 22}}
                                     source={require('../assets/images/discover/pIcon.png')}
                                 />
-                                <Text style={styles.pTxt}>9</Text>
+                                <Text style={styles.pTxt}>22</Text>
                                 <Image
                                     style={{width:22, height: 22, marginLeft:18}}
                                     source={require('../assets/images/discover/nIcon.png')}
                                 />
-                                <Text style={[styles.pTxt, {color: '#f24750'}]}>2</Text>
+                                <Text style={[styles.pTxt, {color: '#f24750'}]}>6</Text>
 
                             </View>
                         </View>
@@ -198,9 +250,117 @@ export default class Result extends Component {
                                 style={{width: 72, height: 21, marginLeft: 21, marginTop: 14}}
                                 source={require('../assets/images/discover/dbLogo.png')}
                             />
+                            <Text style={styles.cardTitle}>(무)참좋은간편건강보험1906</Text>
+
+
+                            <View style={{flexDirection:'row', marginTop: 15}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입유형</Text>
+                                    <Text style={styles.textz}>만기일부환급형, 순수보장형</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>납입주기</Text>
+                                    <Text style={styles.textz}>월납/연납</Text>
+                                </View>
+                            </View>
+
+
+                            <View style={styles.middleBar}/>
+
+                            <View style={{flexDirection:'row'}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입나이</Text>
+                                    <Text style={styles.textz}>15세~80세 [갱신:30~80세]</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>보험기간</Text>
+                                    <Text style={styles.textz}>20년만기</Text>
+                                </View>
+                            </View>
                         </View>
-                        <View style={styles.bottomCard}></View>
-                        <View style={styles.bottomCard}></View>
+
+
+
+                        <View style={styles.bottomCard}>
+                            <Image
+                                style={{width: 72, height: 21, marginLeft: 21, marginTop: 14}}
+                                source={require('../assets/images/discover/dbLogo.png')}
+                            />
+                            <Text style={styles.cardTitle}>(무)I’mOK 암보험</Text>
+
+
+                            <View style={{flexDirection:'row', marginTop: 15}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입유형</Text>
+                                    <Text style={styles.textz}>-</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>납입주기</Text>
+                                    <Text style={styles.textz}>월납/연납</Text>
+                                </View>
+                            </View>
+
+
+                            <View style={styles.middleBar}/>
+
+                            <View style={{flexDirection:'row'}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입나이</Text>
+                                    <Text style={styles.textz}>0세~(90-납입기간)세</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>보험기간</Text>
+                                    <Text style={styles.textz}>100세만기</Text>
+                                </View>
+                            </View>
+                        </View>
+
+
+                        <View style={styles.bottomCard}>
+                            <Image
+                                style={{width: 72, height: 21, marginLeft: 21, marginTop: 14}}
+                                source={require('../assets/images/discover/dbLogo.png')}
+                            />
+                            <Text style={styles.cardTitle}>실손의료비보험</Text>
+
+
+                            <View style={{flexDirection:'row', marginTop: 15}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입유형</Text>
+                                    <Text style={styles.textz}>표준형, 선택형(Ⅱ) 순수보장형</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>납입주기</Text>
+                                    <Text style={styles.textz}>3,6개월/월,연납</Text>
+                                </View>
+                            </View>
+
+
+                            <View style={styles.middleBar}/>
+
+                            <View style={{flexDirection:'row'}}>
+
+                                <View style={{width: 196, marginLeft: 21}}>
+                                    <Text style={styles.titlez}>가입나이</Text>
+                                    <Text style={styles.textz}>태아~70세(조건별 상이)</Text>
+                                </View>
+
+                                <View>
+                                    <Text style={styles.titlez}>보험기간</Text>
+                                    <Text style={styles.textz}>1년만기</Text>
+                                </View>
+                            </View>
+                        </View>
 
 
                     </Swiper>
@@ -283,15 +443,15 @@ const styles = StyleSheet.create({
         color: '#ffffff',
     },
     smileTxt: {
-        width: 171,
+        width: 172,
         height: 39,
-        fontFamily: 'NanumBarunGothic',
+        fontFamily: "NanumBarunGothic",
         fontSize: 30,
-        fontWeight: '500',
-        fontStyle: 'normal',
+        fontWeight: "normal",
+        fontStyle: "normal",
         letterSpacing: -0.67,
-        color: '#20e0a5',
-        marginLeft: 8,
+        color: "#20e0a5",
+        marginLeft: 8
     },
     tagArea: {
         width: 296,
@@ -411,11 +571,11 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         fontStyle: 'normal',
         letterSpacing: 0.38,
-        color: '#042c5c',
+        color: '#042c5c'
     },
     pTxt: {
-        width: 8,
         height: 16,
+        width: 15,
         fontFamily: 'Montserrat',
         fontSize: 12,
         fontWeight: '900',
@@ -495,4 +655,49 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         marginLeft: 24,
     },
+    cardTitle: {
+        width: 197,
+        height: 20,
+        fontFamily: "NanumBarunGothic",
+        fontSize: 16,
+        fontWeight: "bold",
+        fontStyle: "normal",
+        lineHeight: 20,
+        letterSpacing: 0.12,
+        color: "#042c5c",
+        marginLeft: 19,
+        marginTop: 8
+    },
+    titlez: {
+        height: 20,
+        fontFamily: "NanumBarunGothic",
+        fontSize: 12,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        lineHeight: 20,
+        letterSpacing: 0.09,
+        color: "#77869e"
+    },
+    textz: {
+        height: 20,
+        fontFamily: "NanumBarunGothic",
+        fontSize: 13,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        lineHeight: 20,
+        letterSpacing: 0.1,
+        color: "#042c5c",
+        marginTop: 5
+    },
+
+    middleBar: {
+        width: 291,
+        marginLeft: 21,
+        marginTop: 9,
+        marginBottom: 9,
+        height: 1,
+        borderStyle: "solid",
+        borderWidth: 0.3,
+        borderColor: "#bcbcbc"
+    }
 });
